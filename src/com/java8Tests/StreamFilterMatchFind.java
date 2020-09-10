@@ -51,7 +51,7 @@ public class StreamFilterMatchFind {
 								//.filter())
 								//.sorted((e1, e2) -> e1.getSalary() - e2.getSalary())
 								// .sorted(Comparator.comparing(Employee::getFirstName))
-								.collect(toList());
+								.collect(Collectors.toList());
 
 		//System.out.println(result3);
 		

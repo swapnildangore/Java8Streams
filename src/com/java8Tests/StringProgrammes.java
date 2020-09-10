@@ -55,6 +55,7 @@ public class StringProgrammes {
 		Map<Character,Integer> sortedMapByValue = countMap.entrySet()
 				.stream()
 				.sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+				.peek(e->System.out.println("element1 - "+e))
 				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (oldValue,newValue)->oldValue,LinkedHashMap::new));
 		System.out.println(sortedMapByValue);
 		for(Map.Entry<Character, Integer> entry:sortedMapByValue.entrySet()) {
