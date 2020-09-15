@@ -10,7 +10,7 @@ import java.util.Objects;
  * @author lenovo
  *
  */
-public class Trader {
+public class Trader implements Comparable<Trader>{
 
 	private String name;
 	private String city;
@@ -81,5 +81,11 @@ public class Trader {
 		return List.of(new Trader("Swapnil","Pune"),
 				new Trader("Jk","Paper"),
 				new Trader("Balrampur","Dhampur"));
+	}
+
+	@Override
+	public int compareTo(Trader o) {
+		// TODO Auto-generated method stub
+		return this.name.compareTo(o.name);
 	}
 }

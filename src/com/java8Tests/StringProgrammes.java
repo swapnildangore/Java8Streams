@@ -3,13 +3,8 @@
  */
 package com.java8Tests;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Scanner;
-import java.util.stream.Collectors;
+import java.util.*;
+import java.util.stream.*;
 
 /**
  * @author dangoswa
@@ -22,12 +17,22 @@ public class StringProgrammes {
 	 */
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in); 
-		  
-        String s = input.nextLine();
+		 System.out.println("Please enter  input string below:");  
+        String inputStr = input.nextLine();
         
-        System.out.println("You entered string "+s);
+        System.out.println("You entered string "+inputStr);
+        
+        
+        
         input.close();
-        maxOccuringCharInString(s);
+        //maxOccuringCharInString(s);
+        //removeDuplicatesFromString(inputStr);
+        reverseString(inputStr);
+        
+        //System.out.println("Please enter inpt no below: ");
+       // String noToMatch = input.nextLine();
+        
+        //System.out.println("You entered noToMatch "+noToMatch);
 
 	}
 
@@ -70,6 +75,28 @@ public class StringProgrammes {
 		if(input.isBlank())
 			return;
 		
+		//input like "my name is anthony name and my age is 22"
+		/*List<String> tokens = Arrays.stream(input.split("\\s+"))
+				.distinct()
+				.collect(Collectors.toList());*/
 		
+		//Input used "xxyyzz"
+		List<Character> tokens = input.chars()
+				.mapToObj(e->(char)e)
+				.distinct()
+				.collect(Collectors.toList());
+		
+		
+		System.out.println("tokens>>"+tokens);
+	}
+	
+	static void reverseString(String input) {
+		StringBuilder builder = new StringBuilder();
+		
+		for(int i=(input.length()-1);i>=0;i--) {
+			builder.append(input.charAt(i));
+		}
+		System.out.println("reversed string >>> "+builder);
+		//System.out.println("reversed string >>> "+builder.reverse());
 	}
 }
